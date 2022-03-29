@@ -13,7 +13,8 @@ namespace AnimeAnalytics.Models
         public string Description { get; set; }
         public int AverageScore { get; set; }
         public int SeasonYear { get; set; }
-        public string CoverImageURL { get; set; }
+        public string CoverImageARURL { get; set; }
+        public string CoverImageHBURL { get; set; }
         public string BannerImageURL { get; set; }
         public string Genre1 { get; set; }
         public string Genre2 { get; set; }
