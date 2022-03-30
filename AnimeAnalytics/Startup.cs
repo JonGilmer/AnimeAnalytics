@@ -34,6 +34,7 @@ namespace AnimeAnalytics
                 return conn;
             });
 
+            // MAY THROW EXCEPTION *************
             services.AddTransient<IAnimeRepo, AnimeRepo>();
             services.AddCors(options =>                     // CORS = Cross Open Resource Sharing
             {                                               // Opens up the Api to not just limit the callers to a specific domain or individual URL

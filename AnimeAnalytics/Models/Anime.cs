@@ -22,5 +22,8 @@ namespace AnimeAnalytics.Models
         public string Status { get; set; }
         public string AlternateTitle { get; set; }
 
+        public string[] AnimeList { get; set; }
+        public string[] RecommendedAnime { get; set; }
+
     }
 }

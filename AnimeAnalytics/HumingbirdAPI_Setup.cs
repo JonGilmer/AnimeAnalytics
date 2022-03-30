@@ -50,19 +50,19 @@ namespace AnimeAnalytics
 
 
 
-        // Main method for testing purposes
-        public static void Main(string[] args)
-        {
-            Console.WriteLine("Please enter your API key: ");
-            var apiKey = Console.ReadLine();
+        //// Main method for testing purposes
+        //public static void Main(string[] args)
+        //{
+        //    Console.WriteLine("Please enter your API key: ");
+        //    var apiKey = Console.ReadLine();
 
-            // Add methods to lowercase, replace spaces with "-" and remove punctuation from titles that are entered
-            Console.WriteLine("What is the title of the anime you are requesting information on?: ");
-            var animeTitle = Console.ReadLine();
+        //    // Add methods to lowercase, replace spaces with "-" and remove punctuation from titles that are entered
+        //    Console.WriteLine("What is the title of the anime you are requesting information on?: ");
+        //    var animeTitle = Console.ReadLine();
 
-            var info = GetHumingBirdAnimeInfo(animeTitle, apiKey);
-            Console.WriteLine(info);
-        }
+        //    var info = GetHumingBirdAnimeInfo(animeTitle, apiKey);
+        //    Console.WriteLine(info);
+        //}
 
 
     }

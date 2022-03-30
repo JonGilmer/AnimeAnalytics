@@ -13,14 +13,10 @@ namespace AnimeAnalytics
 {
     public class AnimeAPIRepo : IAnimeAPIRepo
     {
-        // Default Constructor
-        public AnimeAPIRepo()
-        {
-        }
-
         // ----- Setting up connection with appsettings to retrieve API Key ------
         private readonly IConfiguration _configuration;
 
+        // Constructor
         public AnimeAPIRepo(IConfiguration configuration)
         {
             _configuration = configuration;
