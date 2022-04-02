@@ -11,13 +11,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AnimeAnalytics
 {
-    public class AnimeAPIRepo : IAnimeAPIRepo
+    public class AnimeInfoRepo : IAnimeInfoRepo
     {
         // ----- Setting up connection with appsettings to retrieve API Key ------
         private readonly IConfiguration _configuration;
 
         // Constructor
-        public AnimeAPIRepo(IConfiguration configuration)
+        public AnimeInfoRepo(IConfiguration configuration)
         {
             _configuration = configuration;
         }
@@ -27,6 +27,7 @@ namespace AnimeAnalytics
             var authKey = _configuration.GetValue<string>("AuthorizationKey");
             return authKey;
         }
+
 
         // ------- API Get Methods --------
         public bool GetAnimeRecTitleExists(string animeTitle)
@@ -40,7 +41,7 @@ namespace AnimeAnalytics
                 Headers =
                 {
                     { "X-RapidAPI-Host", "anime-recommender.p.rapidapi.com" },
-                    { "X-RapidAPI-Key", $"\"{authKey}\"" },
+                    { "X-RapidAPI-Key", "c4add58659mshdfdbdffa531f767p1929a7jsnf630a44c647b" },
                 },
             };
 
@@ -54,20 +55,20 @@ namespace AnimeAnalytics
         }
 
 
-        public Anime GetAnimeRecAnimeInfo(string animeTitle)
+        public Anime GetAnimeRecAnimeInfo(Anime animeTitle)
         {
             var authKey = GetAuthKey();
-            var chosenAnime = new Anime();
+            //var chosenAnime = new Anime();
             var client = new HttpClient();
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri($"https://anime-recommender.p.rapidapi.com/get_anime_info?anime_title={animeTitle}"),
+                RequestUri = new Uri($"https://anime-recommender.p.rapidapi.com/get_anime_info?anime_title={animeTitle.SearchTitle}"),
 
                 Headers =
                 {
                     { "X-RapidAPI-Host", "anime-recommender.p.rapidapi.com" },
-                    { "X-RapidAPI-Key", $"\"{authKey}\"" },
+                    { "X-RapidAPI-Key", "c4add58659mshdfdbdffa531f767p1929a7jsnf630a44c647b" },
                 },
             };
 
@@ -82,65 +83,32 @@ namespace AnimeAnalytics
             string description = formattedResponse["data"]["description"].ToString();
             int seasonYear = Int32.Parse(formattedResponse["data"]["seasonYear"].ToString());
 
-            Console.WriteLine(animeID);
-            Console.WriteLine(averageScore);
-            Console.WriteLine(bannerImageURL);
-            Console.WriteLine(coverImageURL);
-            Console.WriteLine(description);
-            Console.WriteLine(seasonYear);
+            animeTitle.AnimeID = animeID;
+            animeTitle.AverageScore = averageScore;
+            animeTitle.BannerImageURL = bannerImageURL;
+            animeTitle.CoverImageARURL = coverImageURL;
+            animeTitle.Description = description;
+            animeTitle.SeasonYear = seasonYear;
 
-            chosenAnime.AnimeID = animeID;
-            chosenAnime.AverageScore = averageScore;
-            chosenAnime.BannerImageURL = bannerImageURL;
-            chosenAnime.CoverImageARURL = coverImageURL;
-            chosenAnime.Description = description;
-            chosenAnime.SeasonYear = seasonYear;
-
-            return chosenAnime;
+            return animeTitle;
 
         }
 
 
-        //// PARSE FOR IENUMBERABLE, NOT SINGLE OBJECT
-        public string[] GetAnimeRecAnimeList()
+        public Anime GetAnimeRecRecommend(Anime animeTitle)
         {
             var authKey = GetAuthKey();
-            var client = new HttpClient();
-            var request = new HttpRequestMessage
-            {
-                Method = HttpMethod.Get,
-                RequestUri = new Uri("https://anime-recommender.p.rapidapi.com/get_titles"),
-                Headers =
-                {
-                    { "X-RapidAPI-Host", "anime-recommender.p.rapidapi.com" },
-                    { "X-RapidAPI-Key", $"\"{authKey}\"" },
-                },
-            };
-
-            using var response = client.SendAsync(request);
-            var formattedResponse = response.Result.Content.ReadAsStringAsync().Result.ToString();
-            var animeList = formattedResponse.Split(',');
-
-            foreach (var title in animeList)
-                Console.WriteLine($"{title}\n");
-
-            return animeList;
-        }
-
-
-        public string[] GetAnimeRecRecommend(string animeTitle)
-        {
-            var authKey = GetAuthKey();
+            //var chosenAnime = new Anime();
             var client = new HttpClient();
             var request = new HttpRequestMessage
 
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri($"https://anime-recommender.p.rapidapi.com/?anime_title={animeTitle}&number_of_anime=5"),
+                RequestUri = new Uri($"https://anime-recommender.p.rapidapi.com/?anime_title={animeTitle.SearchTitle}&number_of_anime=5"),
                 Headers =
                 {
                     { "X-RapidAPI-Host", "anime-recommender.p.rapidapi.com" },
-                    { "X-RapidAPI-Key", $"\"{authKey}\"" },
+                    { "X-RapidAPI-Key", "c4add58659mshdfdbdffa531f767p1929a7jsnf630a44c647b" },
                 },
             };
 
@@ -148,15 +116,29 @@ namespace AnimeAnalytics
             var responseContent = response.Result.Content.ReadAsStringAsync().Result;
             JObject formattedResponse = JObject.Parse(responseContent);
 
-            string recommendedAnime1 = formattedResponse["data"][0]["title"]["english"].ToString();
-            string recommendedAnime2 = formattedResponse["data"][1]["title"]["english"].ToString();
-            string recommendedAnime3 = formattedResponse["data"][2]["title"]["english"].ToString();
-            string recommendedAnime4 = formattedResponse["data"][3]["title"]["english"].ToString();
-            string recommendedAnime5 = formattedResponse["data"][4]["title"]["english"].ToString();
+            // English title parsing
+            string recAnime1_Title = formattedResponse["data"][1]["title"]["english"].ToString();
+            string recAnime2_Title = formattedResponse["data"][2]["title"]["english"].ToString();
+            string recAnime3_Title = formattedResponse["data"][3]["title"]["english"].ToString();
+            string recAnime4_Title = formattedResponse["data"][4]["title"]["english"].ToString();
+            //string recAnime5_Title = formattedResponse["data"][4]["title"]["english"].ToString();
+            // Cover image parsing
+            string recAnime1_CvrImg = formattedResponse["data"][1]["coverImage"]["large"].ToString();
+            string recAnime2_CvrImg = formattedResponse["data"][2]["coverImage"]["large"].ToString();
+            string recAnime3_CvrImg = formattedResponse["data"][3]["coverImage"]["large"].ToString();
+            string recAnime4_CvrImg = formattedResponse["data"][4]["coverImage"]["large"].ToString();
+            //string recAnime5_CvrImg = formattedResponse["data"][4]["coverImage"]["large"].ToString();
 
-            string[] recommendedAnimeList = new string[5] { recommendedAnime1, recommendedAnime2,
-                recommendedAnime3, recommendedAnime4, recommendedAnime5 };
-            return recommendedAnimeList;
+            animeTitle.RecAnime1_CoverImage = recAnime1_CvrImg;
+            animeTitle.RecAnime1_Title = recAnime1_Title;
+            animeTitle.RecAnime2_CoverImage = recAnime2_CvrImg;
+            animeTitle.RecAnime2_Title = recAnime2_Title;
+            animeTitle.RecAnime3_CoverImage = recAnime3_CvrImg;
+            animeTitle.RecAnime3_Title = recAnime3_Title;
+            animeTitle.RecAnime4_CoverImage = recAnime4_CvrImg;
+            animeTitle.RecAnime4_Title = recAnime4_Title;
+
+            return animeTitle;
         }
     }
 }

@@ -4,12 +4,11 @@ using AnimeAnalytics.Models;
 
 namespace AnimeAnalytics
 {
-    public interface IAnimeAPIRepo
+    public interface IAnimeInfoRepo
     {
         // AnimeRec represents Anime Recommender API
         public bool GetAnimeRecTitleExists(string animeTitle);
-        public Anime GetAnimeRecAnimeInfo(string animeTitle);
-        public string[] GetAnimeRecAnimeList();
-        public string[] GetAnimeRecRecommend(string animeTitle);
+        public Anime GetAnimeRecAnimeInfo(Anime animeTitle);
+        public Anime GetAnimeRecRecommend(Anime animeTitle);
     }
 }

@@ -1,0 +1,368 @@
+﻿* {
+    outline: none !important;
+}
+
+/* highlight selection color styles*/
+::selection {
+    background-color: #66c88ca1;
+    color: #fff;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    overflow-y: scroll;
+}
+
+body {
+    color: whitesmoke;
+}
+
+/* link styles */
+a {
+    -o-transition: all .4s;
+    -ms-transition: all .4s;
+    -moz-transition: all .4s;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+}
+
+/* Headings styles */
+h1, h2 {
+    margin: 0 0 15px 0;
+    text-align: center;
+    color: whitesmoke;
+    text-transform: uppercase;
+    font-family: 'Alegreya Sans';
+}
+
+/* Title class*/
+.title {
+    font-size: 4em;
+    font-style: oblique;
+}
+
+.row {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.row-bottom {
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.btn {
+    border-radius: 0;
+    text-align: center;
+}
+
+    /* button text color when hovering over image */
+    .btn.btn-recommended-anime {
+        background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
+        width: auto;
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+        margin: 20px;
+        border: 2px solid white;
+        background-size: 300% 100%;
+        border-radius: 50px;
+        -moz-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out;
+    }
+
+        /* button text on hover */
+        .btn.btn-recommended-anime:hover {
+            background-position: 100% 0;
+            -moz-transition: all .4s ease-in-out;
+            -o-transition: all .4s ease-in-out;
+            -webkit-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+            background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
+            box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
+        }
+
+    .btn.btn-search {
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+        border: 1px solid white;
+        color: white;
+        background: transparent;
+        border-radius: 5px;
+        -moz-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out;
+    }
+
+        .btn.btn-search:hover {
+            color: #09071d;
+            font-weight: bold;
+            border: none;
+            background-image: linear-gradient(-45deg, rgb(255, 236, 239), rgb(119, 190, 226));
+            box-shadow: 0 4px 15px 0 rgba(119, 190, 226, 0.75);
+        }
+
+#header {
+    position: relative;
+    padding: 0 !important;
+}
+
+    #header.header-wrapper {
+        background-size: cover;
+        display: table;
+        height: 60vh;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        overflow-x: hidden;
+        margin-bottom: -2px;
+    }
+
+    #header .top {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 30px;
+        height: auto;
+        z-index: 500;
+        -o-transition: all .5s;
+        -ms-transition: all .5s;
+        -moz-transition: all .5s;
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+
+    /* Logo Text Styles */
+    #header .logo {
+        font-family: "League Spartan";
+        color: white;
+        text-decoration: none;
+    }
+
+/* Controls the fade in time of an element with the fade-in class */
+.fade-in {
+    animation: fadeIn ease 1.2s;
+    -webkit-animation: fadeIn ease 1.2s;
+    -moz-animation: fadeIn ease 1.2s;
+    -o-animation: fadeIn ease 1.2s;
+    -ms-animation: fadeIn ease 1.2s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.content-block {
+    border: none;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    overflow: hidden;
+    padding-top: 80px;
+    padding-bottom: 20px;
+}
+
+#anime_info_id {
+    background: linear-gradient(90deg, rgb(255, 236, 239), rgb(119, 190, 226), rgb(255, 236, 239));
+    font-size: 16px;
+}
+
+.anime_info {
+    width: 50%;
+    height: 430px;
+    position: relative;
+    display: table;
+    vertical-align: middle;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 10%;
+}
+
+.left {
+    text-align: left;
+    font-size: x-large;
+    filter: drop-shadow(0px 0px 16px rgb(41, 41, 41));
+}
+
+.center {
+    text-align: center;
+    font-size: x-large;
+    filter: drop-shadow(0px 0px 16px rgb(41, 41, 41));
+}
+
+.block-body {
+    margin-top: 60px;
+}
+
+.recommended-anime {
+    display: table;
+    filter: drop-shadow(0px 0px 16px rgb(41, 41, 41));
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 50%;
+    padding-bottom: 50%;
+    padding-left: 13%;
+    padding-right: 13%;
+    background-size: 100%;
+    background-position: center;
+    position: relative;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+    .recommended-anime span {
+        margin-top: 20px;
+        opacity: 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    .recommended-anime:before {
+        background: #09071da5;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: '';
+        opacity: 0;
+        -o-transition: all .2s;
+        -ms-transition: all .2s;
+        -moz-transition: all .2s;
+        -webkit-transition: all .2s;
+        transition: all .2s;
+    }
+
+    .recommended-anime:hover {
+        background-size: 150%;
+        background-position: center;
+    }
+
+        .recommended-anime:hover:before, .recommended-anime:hover span {
+            opacity: 1;
+        }
+
+#search {
+    color: white;
+    background-color: #312f45;
+}
+
+.form-control-white {
+    font-size: 16px;
+    background: #272727a4;
+    color: white;
+}
+
+    .form-control-white::-webkit-input-placeholder { /* WebKit browsers */
+        font-size: 16px;
+        color: white;
+    }
+
+    .form-control-white:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        font-size: 16px;
+        color: white;
+        opacity: 1;
+    }
+
+    .form-control-white::-moz-placeholder { /* Mozilla Firefox 19+ */
+        font-size: 16px;
+        color: white;
+        opacity: 1;
+    }
+
+    .form-control-white:-ms-input-placeholder { /* Internet Explorer 10+ */
+        font-size: 16px;
+        color: white;
+    }
+
+#footer {
+    background: linear-gradient(0deg, rgb(119, 190, 226), #312f45);
+    /* footer text color */
+    color: whitesmoke;
+}
+
+/* Responsive styles
+///////////////////////////////////////////////////////////////////////*/
+
+@media (max-width: 767px) {
+    #header .bottom {
+        bottom: 13%;
+    }
+
+    .recommended-anime {
+        background-position: center;
+    }
+
+        .recommended-anime:before {
+            opacity: 1;
+        }
+
+        .recommended-anime span {
+            opacity: 1;
+        }
+}
+
+@media (max-width: 480px) {
+    #header {
+        background-size: cover;
+    }
+}

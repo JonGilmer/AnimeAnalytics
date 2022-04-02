@@ -1,0 +1,141 @@
+﻿@model Anime
+
+    <div id="wrapper">
+
+        <!-- header -->
+        <div id="header" class="content-block header-wrapper" style="background-image: url(@Model.BannerImageURL)">
+            <div class="header-wrapper-inner">
+                <section class="top clearfix">
+                    <div class="pull-left">
+                        @*<h1><a class="logo" href="Index.html">AnimeAnalytics</a></h1>*@
+                    </div>
+                </section>
+            </div>
+        </div><!-- /header -->
+
+
+        <!-- anime info -->
+        <div class="content-block" id="anime_info_id">
+            <div class="container text-center">
+                <header class="block-heading clearfix fade-in">
+                    <h1 class="title">@Model.Title</h1>
+                    <h2 class="fade-in">@Model.TitleNative</h2>
+                </header>
+                <section class="block-body">
+                    <div class="anime_info col-md-8">
+                        <img src="@Model.CoverImageARURL" style="filter: drop-shadow(0px 0px 16px rgb(41, 41, 41));">
+                    </div>
+                    <div class="anime_info col-md-4 left">
+                        @Model.Description
+                        <br>
+                        <br>
+                        Year: @Model.SeasonYear
+                        <br>
+                        <br>
+                        Average Rating: @Model.AverageScore
+                    </div><!-- /anime info -->
+
+
+
+                    <!-- recommended anime -->
+                    <header class="block-heading clearfix fade-in"><!-- Images / Links -->
+                        <h1 class="title">Recommended Anime</h1>
+                        <h2 class="fade-in">If you enjoyed @Model.Title, then you might also like these!</h2>
+                    </header>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+   <!-- a href = AnimeInfo View -->
+                            <a href="" class="recommended-anime" style="background-image: url(@Model.RecAnime1_CoverImage)">
+                                <span class="btn btn-recommended-anime">
+                                    Go to Anime!
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="col-sm-3">
+   <!-- a href = AnimeInfo View -->
+                            <a href="" class="recommended-anime" style="background-image: url(@Model.RecAnime2_CoverImage)">
+                                <span class="btn btn-recommended-anime">
+                                    Go to Anime!
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="col-sm-3">
+   <!-- a href = AnimeInfo View -->
+                            <a href="" class="recommended-anime" style="background-image: url(@Model.RecAnime3_CoverImage)">
+                                <span class="btn btn-recommended-anime">
+                                    Go to Anime!
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="col-sm-3">
+   <!-- a href = AnimeInfo View -->
+                            <a href="" class="recommended-anime" style="background-image: url(@Model.RecAnime4_CoverImage)">
+                                <span class="btn btn-recommended-anime">
+                                    Go to Anime!
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row"><!-- Titles -->
+                        <div class="col-sm-3 center">
+                            @Model.RecAnime1_Title
+                        </div>
+                        <div class="col-sm-3 center">
+                            @Model.RecAnime2_Title
+                        </div>
+                        <div class="col-sm-3 center">
+                            @Model.RecAnime3_Title
+                        </div>
+                        <div class="col-sm-3 center">
+                            @Model.RecAnime4_Title
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div><!-- /recommended anime -->
+
+
+        <!-- search -->
+        <div class="content-block" id="search">
+            <div class="container text-center">
+                <header class="block-heading clearfix">
+                    <h1>Search For Another Anime</h1>
+                </header>
+
+                <section class="block-body">
+                    <div class="row row-bottom">
+                        <div class="col-md-6 col-md-offset-3">
+                            <form class="" role="form">
+                                <div class="form-group">
+                                    <input type="email" class="form-control form-control-white" id="subject" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control form-control-white" id="exampleInputEmail2" placeholder="Enter email" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control form-control-white" placeholder="Write Something" required></textarea>
+                                </div>
+                                <input type="submit" class="btn btn-search" value="Send">
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div><!-- /search -->
+
+
+    </div><!-- /wrapper-->
+
+
+
+    @*<script src="assets/js/jquery-2.1.3.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.actual.min.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/script.js"></script>*@

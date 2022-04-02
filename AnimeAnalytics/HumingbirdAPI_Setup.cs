@@ -34,14 +34,14 @@ namespace AnimeAnalytics
             var returnedCoverImage = formattedResponse["list"][0]["main"]["temp"];
 
 
-            chosenAnime.Title = returnedTitle.ToString();
-            chosenAnime.Description = returnedDescription.ToString();
-            chosenAnime.EpisodeCount = Int32.Parse(returnedEpisodeCount.ToString());
-            chosenAnime.Status = returnedStatus.ToString();
-            chosenAnime.AlternateTitle = returnedAlternativeTitle.ToString();
-            chosenAnime.Genre1 = returnedGenre1.ToString();
-            chosenAnime.Genre2 = returnedGenre2.ToString();
-            chosenAnime.CoverImageHBURL = returnedCoverImage.ToString();
+            //chosenAnime.Title = returnedTitle.ToString();
+            //chosenAnime.Description = returnedDescription.ToString();
+            //chosenAnime.EpisodeCount = Int32.Parse(returnedEpisodeCount.ToString());
+            //chosenAnime.Status = returnedStatus.ToString();
+            //chosenAnime.AlternateTitle = returnedAlternativeTitle.ToString();
+            //chosenAnime.Genre1 = returnedGenre1.ToString();
+            //chosenAnime.Genre2 = returnedGenre2.ToString();
+            //chosenAnime.CoverImageHBURL = returnedCoverImage.ToString();
 
             return chosenAnime;
         }

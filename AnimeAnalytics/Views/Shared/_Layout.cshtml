@@ -4,14 +4,27 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - AnimeAnalytics</title>
+
+    <!-- Google Fonts -->
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=PT+Sans'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:regular,bold" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans:regular,italic,bold,bolditalic" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nixie+One:regular,italic,bold,bolditalic" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+SC:regular,italic,bold,bolditalic" />
+    <link ref="stylesheet" href="https://fonts.google.com/specimen/League+Spartan?query=leagu#standard-styles" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/AnimeInfo.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AnimeAnalytics</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><strong>Anime</strong>Analytics</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -22,15 +35,17 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="AnimeList" asp-action="DisplayAnimeList">Complete Anime List</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    @*<div class="container">*@
+    <div>
+        @*<main role="main" class="pb-3">*@
+        <main role="main">
             @RenderBody()
         </main>
     </div>

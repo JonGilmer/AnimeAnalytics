@@ -9,11 +9,23 @@
     <None Remove="Dapper" />
     <None Remove="Newtonsoft.Json" />
     <None Remove="Microsoft.Extensions.Configuration.Json" />
+    <None Remove="Views\AnimeList\" />
+    <None Remove="Views\AnimeInfo\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.0.28" />
     <PackageReference Include="Dapper" Version="2.0.123" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\AnimeList\" />
+    <Folder Include="Views\AnimeInfo\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\css\AnimeInfo.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\css\AnimeInfo.css" />
   </ItemGroup>
 </Project>

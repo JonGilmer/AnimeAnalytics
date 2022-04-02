@@ -1,0 +1,25 @@
+﻿@model Anime
+
+<div>
+    <div class="text-center">
+        <h1 class="display-4">@Model.SearchTitle Does Not Exist!</h1>
+        <h2>Be Sure to Use Correct Capitalization and Punctuation!</h2>
+    </div>
+
+    @using (Html.BeginForm("AnimeInfoController", "Method Name", FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>Enter Anime Title: </td>
+                <td>@Html.TextBoxFor(anime => anime.SearchTitle)</td>
+            </tr>
+            @*<tr>
+                    <td>Enter Your API Key: </td>
+                    <td>@Html.TextBoxFor(anime => anime.API_Key)</td>
+                </tr>*@
+            <tr>
+                <td colspan="2"><input type="submit" value="Search Anime" /></td>
+            </tr>
+        </table>
+    }
+</div>

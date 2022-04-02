@@ -1,0 +1,16 @@
+﻿@model List<string>
+
+
+<h2>Complete Anime List</h2>
+<table class="table">
+    <tr>
+        <th>Title</th>
+    </tr>
+
+    @foreach (var animeTitle in Model)
+    {
+        <tr>
+            <td>@animeTitle</td>
+        </tr>
+    }
+</table>
