@@ -1,16 +1,54 @@
 ﻿@model List<string>
 
+    <style>
 
-<h2>Complete Anime List</h2>
-<table class="table">
-    <tr>
-        <th>Title</th>
-    </tr>
+        .search-section {
+            vertical-align: middle;
+            align-content: center;
+            width: auto;
+            height: auto;
+        }
 
-    @foreach (var animeTitle in Model)
-    {
-        <tr>
-            <td>@animeTitle</td>
-        </tr>
-    }
-</table>
+        .table-search {
+            width: 100%;
+            table-layout: auto;
+        }
+
+        .search-row {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 40px;
+            margin-right: 40px;
+            padding: 20px;
+            height: 30px;
+            width: 100%;
+        }
+    </style>
+
+    <div id="wrapper">
+        <div class="bg content-block" id="anime_info_id">
+            <div class="container center">
+                <section class="block-body">
+                    <div class="search-section">
+                        <h1 class="title">Complete Anime List</h1>
+
+                        <table class="table-search">
+                            <tr class="search-row">
+                                <th>Title</th>
+                            </tr>
+
+                            @foreach (var animeTitle in Model)
+                            {
+                                <tr class="search-row">
+                                    <td>@animeTitle</td>
+                                    @*<td><a href=/AnimeInfo/DisplayAnimeTitleExists/@animeTitle>@animeTitle</a></td>
+                                    "DisplayAnimeTitleExists", "AnimeInfo", FormMethod.Post*@
+                                </tr>
+                            }
+                        </table>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>

@@ -1,45 +1,81 @@
 ﻿@model Anime
 
+<style>
+    .search-title {
+        font-weight: bold;
+        font-size: 22px;
+    }
+
+    .bg {
+        background-image: url('/css/images/animeanalytics_index_wallpaper.jpg');
+        background-size: cover;
+        height: 60vh;
+        width: 100%;
+    }
+
+    .search-field {
+        box-shadow: 0 4px 15px 0 rgba(255, 255, 255, 1.00);
+    }
+
+    .search-section {
+        vertical-align: middle;
+        align-content: center;
+        width: auto;
+        height: 400px;
+    }
+
+    .table-search {
+        width: 100%;
+        table-layout: auto;
+    }
+
+    .search-row {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        margin-left: 40px;
+        margin-right: 40px;
+        padding: 20px;
+        height: 60px;
+        width: 100%;
+    }
+
+</style>
+
 <div id="wrapper"><!-- warpper -->
 
-    <!-- header -->
-    <div id="header" class="content-block header-wrapper" style="background-image: url()">
-    @*@Model.BannerImageURL*@
-        <div class="header-wrapper-inner">
-            <section class="top clearfix">
-                    <div class="pull-left">
-                        @*<h1><a class="logo" href="Index.html">AnimeAnalytics</a></h1>*@
-                    </div>
-                </section>
-        </div>
-    </div><!-- /header -->
-
     <!-- anime search -->
-    <div class="content-block" id="anime_info_id">
+    <div class="bg content-block">
         <div class="container text-center">
             <header class="block-heading clearfix fade-in">
                 <h1 class="title">Welcome to <strong>Anime</strong>Analytics!</h1>
                 <h2 class="fade-in">Search For Any Anime!</h2>
             </header>
             <section class="block-body">
-                <div class="anime_info col-md-8">
+                <div class="search-section">
                     @*FORMAT: @using (Html.BeginForm("Method_Name", "Controller_Name[EXCLUDE CONTROLLER]", FormMethod.Post))*@
                     @using (Html.BeginForm("DisplayAnimeTitleExists", "AnimeInfo", FormMethod.Post))
                     {
-                        <table>
-                            <tr>
-                                <td><label for="searchTitle">Enter Anime Title: </label></td>
-                                <td><input type="text" id="searchTitle" placeholder="Anime Title" name="searchTitle" /></td>
-                                @*<td>@Html.TextBoxFor(chosenAnime => chosenAnime.SearchTitle)</td>*@
-                            </tr>
-                            @*<tr>
-                                <td>Enter Your API Key: </td>
-                                <td>@Html.TextBoxFor(anime => anime.API_Key)</td>
-                            </tr>*@
-                            <tr>
-                                <td colspan="2"><input type="submit" class="btn btn-search" value="Search Anime" /></td>
-                            </tr>
-                        </table>
+                    <table class="table-search">
+                        <tr class="search-row">
+                            <td>
+                                <label for="searchTitle" class="search-title"><strong>Enter Anime Title:</strong>
+                                <br>
+                                <italics>(Use correct punctuation and capitalization)</italics>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr class="search-row">
+                            <td><input type="text" id="searchTitle" class="search-field" placeholder="Anime Title" name="searchTitle" /></td>
+                            @*<td>@Html.TextBoxFor(chosenAnime => chosenAnime.SearchTitle)</td>*@
+                        </tr>
+                        @*<tr>
+            <td>Enter Your API Key: </td>
+            <td>@Html.TextBoxFor(anime => anime.API_Key)</td>
+        </tr>*@
+                        <tr class="search-row">
+                            <td><input type="submit" class="btn btn-search" value="Search Anime" /></td>
+                        </tr>
+                    </table>
                     }
                 </div>
             </section>

@@ -47,6 +47,7 @@ h1, h2 {
 .row {
     margin-top: 20px;
     margin-bottom: 10px;
+    width: stretch;
 }
 
 .row-bottom {
@@ -99,6 +100,7 @@ h1, h2 {
         -o-transition: all .4s ease-in-out;
         -webkit-transition: all .4s ease-in-out;
         transition: all .4s ease-in-out;
+        box-shadow: 0 4px 15px 0 rgba(box-shadow: 0 4px 15px 0 rgba(119, 190, 226, 0.75);
     }
 
         .btn.btn-search:hover {
@@ -137,13 +139,6 @@ h1, h2 {
         -moz-transition: all .5s;
         -webkit-transition: all .5s;
         transition: all .5s;
-    }
-
-    /* Logo Text Styles */
-    #header .logo {
-        font-family: "League Spartan";
-        color: white;
-        text-decoration: none;
     }
 
 /* Controls the fade in time of an element with the fade-in class */

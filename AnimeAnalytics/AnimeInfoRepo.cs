@@ -98,6 +98,7 @@ namespace AnimeAnalytics
         public Anime GetAnimeRecRecommend(Anime animeTitle)
         {
             var authKey = GetAuthKey();
+            var nullCheck = new string[4];
             //var chosenAnime = new Anime();
             var client = new HttpClient();
             var request = new HttpRequestMessage
@@ -118,17 +119,23 @@ namespace AnimeAnalytics
 
             // English title parsing
             string recAnime1_Title = formattedResponse["data"][1]["title"]["english"].ToString();
+            nullCheck[0] = recAnime1_Title;
             string recAnime2_Title = formattedResponse["data"][2]["title"]["english"].ToString();
+            nullCheck[1] = recAnime2_Title;
             string recAnime3_Title = formattedResponse["data"][3]["title"]["english"].ToString();
+            nullCheck[2] = recAnime3_Title;
             string recAnime4_Title = formattedResponse["data"][4]["title"]["english"].ToString();
-            //string recAnime5_Title = formattedResponse["data"][4]["title"]["english"].ToString();
+            nullCheck[3] = recAnime4_Title;
+
+
             // Cover image parsing
             string recAnime1_CvrImg = formattedResponse["data"][1]["coverImage"]["large"].ToString();
             string recAnime2_CvrImg = formattedResponse["data"][2]["coverImage"]["large"].ToString();
             string recAnime3_CvrImg = formattedResponse["data"][3]["coverImage"]["large"].ToString();
             string recAnime4_CvrImg = formattedResponse["data"][4]["coverImage"]["large"].ToString();
-            //string recAnime5_CvrImg = formattedResponse["data"][4]["coverImage"]["large"].ToString();
+            
 
+            // setting Anime properties equal to parsed values
             animeTitle.RecAnime1_CoverImage = recAnime1_CvrImg;
             animeTitle.RecAnime1_Title = recAnime1_Title;
             animeTitle.RecAnime2_CoverImage = recAnime2_CvrImg;
@@ -137,6 +144,25 @@ namespace AnimeAnalytics
             animeTitle.RecAnime3_Title = recAnime3_Title;
             animeTitle.RecAnime4_CoverImage = recAnime4_CvrImg;
             animeTitle.RecAnime4_Title = recAnime4_Title;
+
+
+            // Checking for null english titles. If null, replace with userPreferred title.
+            if (animeTitle.RecAnime1_Title == null)
+            {
+                animeTitle.RecAnime1_Title = formattedResponse["data"][1]["title"]["userPreferred"].ToString();
+            }
+            if (animeTitle.RecAnime2_Title == null)
+            {
+                animeTitle.RecAnime2_Title = formattedResponse["data"][2]["title"]["userPreferred"].ToString();
+            }
+            if (animeTitle.RecAnime3_Title == null)
+            {
+                animeTitle.RecAnime3_Title = formattedResponse["data"][3]["title"]["userPreferred"].ToString();
+            }
+            if (animeTitle.RecAnime4_Title == null)
+            {
+                animeTitle.RecAnime4_Title = formattedResponse["data"][4]["title"]["userPreferred"].ToString();
+            }
 
             return animeTitle;
         }

@@ -21,9 +21,11 @@
   <ItemGroup>
     <Folder Include="Views\AnimeList\" />
     <Folder Include="Views\AnimeInfo\" />
+    <Folder Include="wwwroot\css\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\css\AnimeInfo.css" />
+    <Content Remove="wwwroot\css\images\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\css\AnimeInfo.css" />
