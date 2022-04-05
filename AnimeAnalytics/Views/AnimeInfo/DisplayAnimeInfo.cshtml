@@ -5,6 +5,8 @@
         <!-- header -->
         <div id="header" class="content-block header-wrapper" style="background-image: url(@Model.BannerImageURL)">
             <section class="top clearfix">
+                <div class="pull-left">
+                </div>
             </section>
         </div><!-- /header -->
 
@@ -33,44 +35,76 @@
 
 
                     <!-- recommended anime -->
-                    <header class="block-heading clearfix fade-in"><!-- Images / Links -->
+                    <header class="block-heading clearfix fade-in">
                         <h1 class="title">Recommended Anime</h1>
                         <h2 class="fade-in">If you enjoyed @Model.Title, then you might also like these!</h2>
                     </header>
 
                     <div class="row">
                         <div class="col-sm-3">
-   <!-- a href = AnimeInfo View -->
                             <a href="" class="recommended-anime" style="background-image: url(@Model.RecAnime1_CoverImage)">
                                 <span class="btn btn-recommended-anime">
-                                    Go to Anime!
+                                    @Html.ActionLink(
+                                       linkText: "Go to Anime!",
+                                       actionName: "DisplayAnimeTitleExists",
+                                       controllerName: "AnimeInfo",
+                                       routeValues: new
+                                            {
+                                                searchTitle = @Model.RecAnime1_Title
+                                            },
+                                       htmlAttributes: null
+                                    )
                                 </span>
                             </a>
                         </div>
 
                         <div class="col-sm-3">
-   <!-- a href = AnimeInfo View -->
                             <a href="" class="recommended-anime" style="background-image: url(@Model.RecAnime2_CoverImage)">
                                 <span class="btn btn-recommended-anime">
-                                    Go to Anime!
+                                    @Html.ActionLink(
+                                       linkText: "Go to Anime!",
+                                       actionName: "DisplayAnimeTitleExists",
+                                       controllerName: "AnimeInfo",
+                                       routeValues: new
+                                       {
+                                                searchTitle = @Model.RecAnime2_Title
+                                       },
+                                       htmlAttributes: null
+                                    )
                                 </span>
                             </a>
                         </div>
 
                         <div class="col-sm-3">
-   <!-- a href = AnimeInfo View -->
                             <a href="" class="recommended-anime" style="background-image: url(@Model.RecAnime3_CoverImage)">
                                 <span class="btn btn-recommended-anime">
-                                    Go to Anime!
+                                    @Html.ActionLink(
+                                       linkText: "Go to Anime!",
+                                       actionName: "DisplayAnimeTitleExists",
+                                       controllerName: "AnimeInfo",
+                                       routeValues: new
+                                       {
+                                                searchTitle = @Model.RecAnime3_Title
+                                       },
+                                       htmlAttributes: null
+                                    )
                                 </span>
                             </a>
                         </div>
 
                         <div class="col-sm-3">
-   <!-- a href = AnimeInfo View -->
                             <a href="" class="recommended-anime" style="background-image: url(@Model.RecAnime4_CoverImage)">
                                 <span class="btn btn-recommended-anime">
-                                    Go to Anime!
+                                    @Html.ActionLink(
+                                       linkText: "Go to Anime!",
+                                       actionName: "DisplayAnimeTitleExists",
+                                       controllerName: "AnimeInfo",
+                                       routeValues: new
+                                       {
+                                                searchTitle = @Model.RecAnime4_Title
+                                       },
+                                       htmlAttributes: null
+                                    )
                                 </span>
                             </a>
                         </div>
@@ -78,16 +112,52 @@
 
                     <div class="row"><!-- Titles -->
                         <div class="col-sm-3 center">
-                            @Model.RecAnime1_Title
+                            @Html.ActionLink(
+                                linkText: @Model.RecAnime1_Title,
+                                actionName: "DisplayAnimeTitleExists",
+                                controllerName: "AnimeInfo",
+                                routeValues: new
+                                {
+                                    searchTitle = @Model.RecAnime1_Title
+                                },
+                                htmlAttributes: null
+                            )
                         </div>
                         <div class="col-sm-3 center">
-                            @Model.RecAnime2_Title
+                            @Html.ActionLink(
+                                linkText: @Model.RecAnime2_Title,
+                                actionName: "DisplayAnimeTitleExists",
+                                controllerName: "AnimeInfo",
+                                routeValues: new
+                                {
+                                    searchTitle = @Model.RecAnime2_Title
+                                },
+                                htmlAttributes: null
+                            )
                         </div>
                         <div class="col-sm-3 center">
-                            @Model.RecAnime3_Title
+                            @Html.ActionLink(
+                                linkText: @Model.RecAnime3_Title,
+                                actionName: "DisplayAnimeTitleExists",
+                                controllerName: "AnimeInfo",
+                                routeValues: new
+                                {
+                                    searchTitle = @Model.RecAnime3_Title
+                                },
+                                htmlAttributes: null
+                            )
                         </div>
                         <div class="col-sm-3 center">
-                            @Model.RecAnime4_Title
+                            @Html.ActionLink(
+                                linkText: @Model.RecAnime4_Title,
+                                actionName: "DisplayAnimeTitleExists",
+                                controllerName: "AnimeInfo",
+                                routeValues: new
+                                {
+                                    searchTitle = @Model.RecAnime4_Title
+                                },
+                                htmlAttributes: null
+                            )
                         </div>
                     </div>
                 </section>

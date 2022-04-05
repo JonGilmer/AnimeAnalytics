@@ -76,19 +76,23 @@ namespace AnimeAnalytics
             var responseContent = response.Result.Content.ReadAsStringAsync().Result;
             JObject formattedResponse = JObject.Parse(responseContent);
 
+            string animeName = formattedResponse["data"]["title"]["english"].ToString();
             int animeID = Int32.Parse(formattedResponse["data"]["id"].ToString());
             int averageScore = Int32.Parse(formattedResponse["data"]["averageScore"].ToString());
             string bannerImageURL = formattedResponse["data"]["bannerImage"].ToString();
             string coverImageURL = formattedResponse["data"]["coverImage"]["large"].ToString();
             string description = formattedResponse["data"]["description"].ToString();
             int seasonYear = Int32.Parse(formattedResponse["data"]["seasonYear"].ToString());
+            string animeTitleNative = formattedResponse["data"]["title"]["native"].ToString();
 
+            animeTitle.Title = animeName;
             animeTitle.AnimeID = animeID;
             animeTitle.AverageScore = averageScore;
             animeTitle.BannerImageURL = bannerImageURL;
             animeTitle.CoverImageARURL = coverImageURL;
             animeTitle.Description = description;
             animeTitle.SeasonYear = seasonYear;
+            animeTitle.TitleNative = animeTitleNative;
 
             return animeTitle;
 

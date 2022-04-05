@@ -1,6 +1,4 @@
-﻿* {
-    outline: none !important;
-}
+﻿* { outline: none !important;}
 
 /* highlight selection color styles*/
 ::selection {
@@ -60,7 +58,6 @@ h1, h2 {
     text-align: center;
 }
 
-    /* button text color when hovering over image */
     .btn.btn-recommended-anime {
         background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
         width: auto;
@@ -77,7 +74,6 @@ h1, h2 {
         transition: all .4s ease-in-out;
     }
 
-        /* button text on hover */
         .btn.btn-recommended-anime:hover {
             background-position: 100% 0;
             -moz-transition: all .4s ease-in-out;
