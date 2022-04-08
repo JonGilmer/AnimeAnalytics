@@ -45,11 +45,5 @@ namespace AnimeAnalytics.Controllers
 
             return View(chosenAnime);
         }
-
-        //public IActionResult DisplayRecommendedAnime(Anime chosenAnime)
-        //{
-        //    var model = repo.GetAnimeRecRecommend(chosenAnime.SearchTitle);
-        //    return View(model);
-        //}
     }
 }

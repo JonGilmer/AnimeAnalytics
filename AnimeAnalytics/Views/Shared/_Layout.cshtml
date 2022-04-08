@@ -15,9 +15,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../wwwroot/css/AnimeInfo.css" />
-    <link rel="stylesheet" href="../wwwroot/css/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
 </head>
 <body>
@@ -42,17 +40,15 @@
             </div>
         </nav>
     </header>
-    @*<div class="container">*@
     <div>
-        @*<main role="main" class="pb-3">*@
         <main role="main">
             @RenderBody()
         </main>
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - AnimeAnalytics - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div style="flex-grow: 1; align-content: center; text-align: center; margin: 20px">
+            &copy; 2022 - AnimeAnalytics - <a class="text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

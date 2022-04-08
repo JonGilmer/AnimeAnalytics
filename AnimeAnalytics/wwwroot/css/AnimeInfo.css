@@ -211,10 +211,10 @@ h1, h2 {
     padding-bottom: 20px;
 }
 
-#anime_info_id {
-    background: linear-gradient(90deg, rgb(255, 236, 239), rgb(119, 190, 226), rgb(255, 236, 239));
+/*#anime_info_id {
+    background-image: linear-gradient(90deg, rgb(255, 236, 239), rgb(119, 190, 226), rgb(255, 236, 239));
     font-size: 16px;
-}
+}*/
 
 .anime_info {
     width: 50%;

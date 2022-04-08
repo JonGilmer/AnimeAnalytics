@@ -11,12 +11,14 @@
     <None Remove="Microsoft.Extensions.Configuration.Json" />
     <None Remove="Views\AnimeList\" />
     <None Remove="Views\AnimeInfo\" />
+    <None Remove="bootstrap" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.0.28" />
     <PackageReference Include="Dapper" Version="2.0.123" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+    <PackageReference Include="bootstrap" Version="5.1.3" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\AnimeList\" />

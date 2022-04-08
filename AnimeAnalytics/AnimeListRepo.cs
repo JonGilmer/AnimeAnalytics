@@ -20,11 +20,12 @@ namespace AnimeAnalytics
 
         public string GetAuthKey()
         {
-            var authKey = _configuration.GetConnectionString("AuthorizationKey");
-                //GetValue<string>("AuthorizationKey");
+            var authKey = _configuration.GetValue<string>("AuthorizationKey");
             return authKey;
         }
 
+
+        // ------- API Get Methods --------
         public List<string> GetAnimeRecAnimeList()
         {
             var authKey = GetAuthKey();
@@ -37,7 +38,7 @@ namespace AnimeAnalytics
                 Headers =
                 {
                     { "X-RapidAPI-Host", "anime-recommender.p.rapidapi.com" },
-                    { "X-RapidAPI-Key", "c4add58659mshdfdbdffa531f767p1929a7jsnf630a44c647b" },
+                    { "X-RapidAPI-Key", authKey },
                 },
             };
 

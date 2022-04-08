@@ -20,6 +20,11 @@ namespace AnimeAnalytics.Controllers
         {
             var animeTitle = repo.GetAnimeRecAnimeList();
 
+            if (animeTitle == null)
+            {
+                return View();
+            }
+
             return View(animeTitle);
         }
     }

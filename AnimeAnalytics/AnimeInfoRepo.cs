@@ -41,7 +41,7 @@ namespace AnimeAnalytics
                 Headers =
                 {
                     { "X-RapidAPI-Host", "anime-recommender.p.rapidapi.com" },
-                    { "X-RapidAPI-Key", "c4add58659mshdfdbdffa531f767p1929a7jsnf630a44c647b" },
+                    { "X-RapidAPI-Key", authKey },
                 },
             };
 
@@ -68,7 +68,7 @@ namespace AnimeAnalytics
                 Headers =
                 {
                     { "X-RapidAPI-Host", "anime-recommender.p.rapidapi.com" },
-                    { "X-RapidAPI-Key", "c4add58659mshdfdbdffa531f767p1929a7jsnf630a44c647b" },
+                    { "X-RapidAPI-Key", authKey },
                 },
             };
 
@@ -113,7 +113,7 @@ namespace AnimeAnalytics
                 Headers =
                 {
                     { "X-RapidAPI-Host", "anime-recommender.p.rapidapi.com" },
-                    { "X-RapidAPI-Key", "c4add58659mshdfdbdffa531f767p1929a7jsnf630a44c647b" },
+                    { "X-RapidAPI-Key", authKey },
                 },
             };
 
@@ -123,13 +123,9 @@ namespace AnimeAnalytics
 
             // English title parsing
             string recAnime1_Title = formattedResponse["data"][1]["title"]["english"].ToString();
-            nullCheck[0] = recAnime1_Title;
             string recAnime2_Title = formattedResponse["data"][2]["title"]["english"].ToString();
-            nullCheck[1] = recAnime2_Title;
             string recAnime3_Title = formattedResponse["data"][3]["title"]["english"].ToString();
-            nullCheck[2] = recAnime3_Title;
             string recAnime4_Title = formattedResponse["data"][4]["title"]["english"].ToString();
-            nullCheck[3] = recAnime4_Title;
 
 
             // Cover image parsing
