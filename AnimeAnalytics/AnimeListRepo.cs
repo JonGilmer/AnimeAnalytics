@@ -47,8 +47,6 @@ namespace AnimeAnalytics
             var stringResponse = JObject.Parse(responseJSON).GetValue("data").ToString();
 
             var stringTitles = JsonConvert.DeserializeObject<List<string>>(stringResponse);
-            //stringTitles.ForEach(x => animeList.ListOfAnime(x));
-            //animeList.ListOfAnime = stringTitles;
             return stringTitles;
         }
     }
